@@ -9,3 +9,11 @@
     /* grid-template-columns: 60px 60px 60px 60px 60px 60px 60px; */
     /* grid-template-rows: 30px 30px; */
 }
+
+.display-flex-between {
+    display: flex;
+    justify-content: space-between;
+    /* display: grid;
+    /* grid-template-columns: 60px 60px 60px 60px 60px 60px 60px; */
+    /* grid-template-rows: 30px 30px; */
+}

@@ -1,4 +1,4 @@
-import React, {  useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import './userDashboard.css'
 
@@ -92,26 +92,28 @@ export default function UserDashboard() {
             description: "Some quick example text to build on the card title and make up the bulk of the card's content."
         }]]
 
-
-    console.log(">>>>>movieLists.length", movieLists.length)
     const navigate = useNavigate();
-    // function handleClick() {
-    //     localStorage.clear(); // Clear local storage
-    //     sessionStorage.clear();
-    //     console.log(">>>>>>>>handleClickhandleClick")
-    //     navigate("/login");
-    // }
 
-    // const LogOut = () =>{
-    //     console.log(">?>>>Over Here")
-    //     // localStorage.clear(); // Clear local storage
-    //     // sessionStorage.clear(); // Clear session storage
-    //     return useNavigate("/login") ;
-    // }
+    const LogOut = () => {
+        console.log(">?>>>Over Here")
+        localStorage.clear(); // Clear local storage
+        sessionStorage.clear(); // Clear session storage
+        navigate("/login");
+    }
 
     return (
         <div>
             <div class="container-fluid">
+                <div class="row">
+                    <div class="display-flex-between">
+                        <div>
+                            UserName
+                        </div>
+                        <button onClick={() => LogOut()}>
+                            LogOut
+                        </button>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-1">
                         Side Bar
@@ -128,8 +130,8 @@ export default function UserDashboard() {
                                 <div id="carouselExampleControls" class="carousel slide" data-bs-interval="false">
                                     <div class="carousel-inner">
                                         {
-                                            movieLists.map((eachRecord,index) => (
-                                                <div class={`carousel-item ${ index ? '' : 'active'}`}>
+                                            movieLists.map((eachRecord, index) => (
+                                                <div class={`carousel-item ${index ? '' : 'active'}`}>
                                                     <div class="row">
                                                         <div class="display-flex">
                                                             {eachRecord.map((car) => <CardList name={car.name} description={car.description} />)}
